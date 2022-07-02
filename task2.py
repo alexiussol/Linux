@@ -1,41 +1,53 @@
-class Data:
-    def __init__(self, day_month_year):
-        # self.day = day
-        # self.month = month
-        # self.year = year
-        self.day_month_year = str(day_month_year)
+#alexei@alexei-VirtualBox:~$ mkdir mentors
 
-    @classmethod
-    def extract(cls, day_month_year):
-        my_date = []
+#alexei@alexei-VirtualBox:~$ mkdir students
 
-        for i in day_month_year.split():
-            if i != '-': my_date.append(i)
+#alexei@alexei-VirtualBox:~$ rm -rf mentors
 
-        return int(my_date[0]), int(my_date[1]), int(my_date[2])
+#alexei@alexei-VirtualBox:~$ rm -rf students
 
-    @staticmethod
-    def valid(day, month, year):
+#alexei@alexei-VirtualBox:~$ mkdir {mentors,students}
 
-        if 1 <= day <= 31:
-            if 1 <= month <= 12:
-                if 2022 >= year >= 0:
-                    return f'All right'
-                else:
-                    return f'Неправильный год'
-            else:
-                return f'Неправильный месяц'
-        else:
-            return f'Неправильный день'
+#alexei@alexei-VirtualBox:~$ cd mentors
 
-    def __str__(self):
-        return f'Текущая дата {Data.extract(self.day_month_year)}'
+#alexei@alexei-VirtualBox:~/mentors$ echo>mentors_list.txt
 
+#alexei@alexei-VirtualBox:~/mentors$ cd
 
-today = Data('11 - 1 - 2001')
-print(today)
-print(Data.valid(11, 11, 2022))
-print(today.valid(11, 13, 2011))
-print(Data.extract('11 - 11 - 2011'))
-print(today.extract('11 - 11 - 2020'))
-print(Data.valid(1, 11, 2000))
+#alexei@alexei-VirtualBox:~$
+
+#alexei@alexei-VirtualBox:~$ cd students
+
+#alexei@alexei-VirtualBox:~/students$ echo>students_list.txt
+
+#alexei@alexei-VirtualBox:~/mentors$ nano mentors_list.txt
+
+#Elena Fedotova
+
+#Roman Kislov
+
+#Valentin Birukov
+
+#alexei@alexei-VirtualBox:~/mentors$ cd
+
+#alexei@alexei-VirtualBox:~$
+
+#alexei@alexei-VirtualBox:~$ cd students
+
+#alexei@alexei-VirtualBox:~/students$ nano students_list.txt
+
+#Alexei Soloviev
+
+#Nelli Molodkina
+
+#Maxim Dudka
+
+#Andrey Ushakov
+
+#alexei@alexei-VirtualBox:~$ mv mentors_list.txt -t students
+
+#alexei@alexei-VirtualBox:~$ rm -rf mentors
+
+#alexei@alexei-VirtualBox:~$ mv students students_and_mentors
+
+#alexei@alexei-VirtualBox:~$ rm -r students_and_mentors
